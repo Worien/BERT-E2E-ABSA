@@ -168,6 +168,8 @@ def predict(args, model, tokenizer):
                 preds = model.tagger.viterbi_tags(logits=logits, mask=mask)
             label_indices = evaluate_label_ids[idx]
             words = total_words[idx]
+            print("outputs ", outputs)
+            print("preds ", preds)
             pred_labels = preds[0][label_indices]
             assert len(words) == len(pred_labels)
             pred_tags = [absa_id2tag[label] for label in pred_labels]
