@@ -170,7 +170,7 @@ def predict(args, model, tokenizer):
             words = total_words[idx]
             print("preds ", preds)
             pred_labels = preds[0][label_indices]
-            print("pred_labels ", preds)
+            print("pred_labels ", pred_labels)
             assert len(words) == len(pred_labels)
             pred_tags = [absa_id2tag[label] for label in pred_labels]
             print("pred_tags ", pred_tags)
