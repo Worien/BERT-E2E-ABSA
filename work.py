@@ -167,17 +167,17 @@ def predict(args, model, tokenizer):
                 mask = batch[1]
                 preds = model.tagger.viterbi_tags(logits=logits, mask=mask)
 
-            print("idx ", idx)
-            print("evaluate_label_ids ", evaluate_label_ids)
+            # print("idx ", idx)
+            # print("evaluate_label_ids ", evaluate_label_ids)
             label_indices = evaluate_label_ids[idx]
-            print("label_indices ", label_indices)
+            # print("label_indices ", label_indices)
             words = total_words[idx]
-            print("preds ", preds)
+            # print("preds ", preds)
             pred_labels = preds[0][label_indices]
-            print("pred_labels ", pred_labels)
+            # print("pred_labels ", pred_labels)
             assert len(words) == len(pred_labels)
             pred_tags = [absa_id2tag[label] for label in pred_labels]
-            print("pred_tags ", pred_tags)
+            # print("pred_tags ", pred_tags)
 
             if args.tagging_schema == 'OT':
                 pred_tags = ot2bieos_ts(pred_tags)
