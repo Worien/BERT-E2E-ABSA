@@ -166,7 +166,10 @@ def predict(args, model, tokenizer):
             else:
                 mask = batch[1]
                 preds = model.tagger.viterbi_tags(logits=logits, mask=mask)
+
+            print("idx ", idx)
             label_indices = evaluate_label_ids[idx]
+            print("label_indices ", label_indices)
             words = total_words[idx]
             print("preds ", preds)
             pred_labels = preds[0][label_indices]
