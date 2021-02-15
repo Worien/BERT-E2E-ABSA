@@ -486,6 +486,7 @@ def compute_metrics_absa(preds, labels, all_evaluate_label_ids, tagging_schema):
         n_tp_ts += hit_ts_count
         n_gold_ts += gold_ts_count
         n_pred_ts += pred_ts_count
+        print("n_tp_ts", n_tp_ts)
         for (b, e, s) in g_ts_sequence:
             if s == 'POS':
                 class_count[0] += 1
@@ -506,6 +507,7 @@ def compute_metrics_absa(preds, labels, all_evaluate_label_ids, tagging_schema):
     # calculate micro-average scores for ts task
     # TP
     n_tp_total = sum(n_tp_ts)
+    print("n_tp_total ", n_tp_total)
     # TP + FN
     n_g_total = sum(n_gold_ts)
     print("class_count:", class_count)
