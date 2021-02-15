@@ -478,6 +478,9 @@ def compute_metrics_absa(preds, labels, all_evaluate_label_ids, tagging_schema):
 
         hit_ts_count, gold_ts_count, pred_ts_count = match_ts(gold_ts_sequence=g_ts_sequence,
                                                               pred_ts_sequence=p_ts_sequence)
+        print("hit_ts_count ", hit_ts_count)
+        print("gold_ts_count ", gold_ts_count)
+        print("pred_ts_count ", pred_ts_count)
         n_tp_ts += hit_ts_count
         n_gold_ts += gold_ts_count
         n_pred_ts += pred_ts_count
