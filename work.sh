@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-TASK_NAME="rest16"
+TASK_NAME="rest15"
 ABSA_HOME="./bert-linear-rest16-finetune"
 CUDA_VISIBLE_DEVICES=0 python work.py --absa_home ${ABSA_HOME} \
                       --ckpt ${ABSA_HOME}/checkpoint-1500 \
