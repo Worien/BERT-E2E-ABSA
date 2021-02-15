@@ -475,6 +475,8 @@ def compute_metrics_absa(preds, labels, all_evaluate_label_ids, tagging_schema):
             # current tagging schema is BIEOS, do nothing
             pass
         g_ts_sequence, p_ts_sequence = tag2ts(ts_tag_sequence=gold_tags), tag2ts(ts_tag_sequence=pred_tags)
+        print("g_ts_sequence ", g_ts_sequence)
+        print("p_ts_sequence ", p_ts_sequence)
 
         hit_ts_count, gold_ts_count, pred_ts_count = match_ts(gold_ts_sequence=g_ts_sequence,
                                                               pred_ts_sequence=p_ts_sequence)
