@@ -202,6 +202,7 @@ def train(args, train_dataset, model, tokenizer):
                       'attention_mask': batch[1],
                       'token_type_ids': batch[2] if args.model_type in ['bert', 'xlnet'] else None,  # XLM don't use segment_ids
                       'labels':         batch[3]}
+            print("inputs: ", inputs)
             ouputs = model(**inputs)
             # loss with attention mask
             loss = ouputs[0]  # model outputs are always tuple in pytorch-transformers (see doc)
