@@ -196,6 +196,7 @@ def convert_examples_to_seq_features(examples, label_list, tokenizer,
                                      mask_padding_with_zero=True):
     # feature extraction for sequence labeling
     label_map = {label: i for i, label in enumerate(label_list)}
+    print("label_map: ", label_map)
     features = []
     max_seq_length = -1
     examples_tokenized = []
@@ -349,6 +350,8 @@ def convert_examples_to_features(examples, label_list, max_seq_length,
         # For classification tasks, the first vector (corresponding to [CLS]) is
         # used as as the "sentence vector". Note that this only makes sense because
         # the entire model is fine-tuned.
+        print("tokens_a = ", tokens_a)
+        print("tokens_b = ", tokens_b)
         tokens = tokens_a + [sep_token]
         segment_ids = [sequence_a_segment_id] * len(tokens)
 
