@@ -248,6 +248,7 @@ def convert_examples_to_seq_features(examples, label_list, tokenizer,
             segment_ids = [cls_token_segment_id] + segment_ids
             labels = ['O'] + labels
             evaluate_label_ids += 1
+        print("convert_examples_to_seq_features tokens = ", tokens)
         input_ids = tokenizer.convert_tokens_to_ids(tokens)
         input_mask = [1 if mask_padding_with_zero else 0] * len(input_ids)
         # Zero-pad up to the sequence length.
