@@ -22,7 +22,7 @@ for run_id, seed in enumerate(seed_numbers):
     command = "python main.py --model_type %s --absa_type %s --tfm_mode %s --fix_tfm %s " \
               "--model_name_or_path bert-base-uncased --data_dir ./data/%s --task_name %s " \
               "--per_gpu_train_batch_size %s --per_gpu_eval_batch_size 8 --learning_rate 2e-5 " \
-              "--max_steps 1500 --warmup_steps %s --do_train --do_eval --do_lower_case " \
+              "--max_steps 1 --warmup_steps %s --do_train --do_eval --do_lower_case " \
               "--seed %s --tagging_schema BIEOS --overfit %s " \
               "--overwrite_output_dir --eval_all_checkpoints --MASTER_ADDR localhost --MASTER_PORT 28512" % (
         model_type, absa_type, tfm_mode, fix_tfm, task_name, task_name, train_batch_size, warmup_steps, seed, overfit)
