@@ -344,6 +344,7 @@ def load_and_cache_examples(args, task, tokenizer, mode='train'):
     else:
         #logger.info("Creating features from dataset file at %s", args.data_dir)
         label_list = processor.get_labels(args.tagging_schema)
+        print("load_and_cache_examples label_list = ", label_list)
         if mode == 'train':
             examples = processor.get_train_examples(args.data_dir, args.tagging_schema)
         elif mode == 'dev':
@@ -443,6 +444,7 @@ def main():
     # Training
     if args.do_train:
         train_dataset, train_evaluate_label_ids = load_and_cache_examples(args, args.task_name, tokenizer, mode='train')
+        print("***do_train***")
         global_step, tr_loss = train(args, train_dataset, model, tokenizer)
 
     if args.do_train and (args.local_rank == -1 or dist.get_rank() == 0):
