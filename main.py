@@ -304,11 +304,13 @@ def evaluate(args, model, tokenizer, mode, prefix=""):
             else:
                 preds = np.append(preds, logits.detach().cpu().numpy(), axis=0)
                 out_label_ids = np.append(out_label_ids, inputs['labels'].detach().cpu().numpy(), axis=0)
+        print("preds before argmax = ", preds)
         eval_loss = eval_loss / nb_eval_steps
         # argmax operation over the last dimension
         if model.tagger_config.absa_type != 'crf':
             # greedy decoding
             preds = np.argmax(preds, axis=-1)
+            print("preds after argmax = ", preds)
         else:
             # viterbi decoding for CRF-based model
             crf_logits = torch.cat(crf_logits, dim=0)
