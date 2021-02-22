@@ -462,7 +462,10 @@ def compute_metrics_absa(preds, labels, all_evaluate_label_ids, tagging_schema):
     class_count = np.zeros(3)
     for i in range(n_samples):
         evaluate_label_ids = all_evaluate_label_ids[i]
+        print("evaluate_label_ids =", evaluate_label_ids)
         pred_labels = preds[i][evaluate_label_ids]
+        print("preds[i] =", preds[i])
+        print("pred_labels =", pred_labels)
         gold_labels = labels[i][evaluate_label_ids]
         assert len(pred_labels) == len(gold_labels)
         # here, no EQ tag will be induced

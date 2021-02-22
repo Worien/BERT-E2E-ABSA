@@ -415,6 +415,7 @@ def main():
     args.output_mode = output_modes[args.task_name]
     label_list = processor.get_labels(args.tagging_schema)
     num_labels = len(label_list)
+    print("num_labels = ", num_labels)
 
     if args.local_rank not in [-1, 0]:
         torch.distributed.barrier()
