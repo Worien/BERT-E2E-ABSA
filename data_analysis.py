@@ -32,6 +32,7 @@ def _get_all_tags(data_dir, set_type, tagging_schema):
                 else:
                     word = ''.join((len(eles) - 2) * ['='])
                     tag = eles[-1]
+                print('%s-%s', word, tag)
                 words.append(word)
                 tags.append(tag)
             # convert from ot to bieos
@@ -42,7 +43,6 @@ def _get_all_tags(data_dir, set_type, tagging_schema):
             else:
                 # original tags follow the OT tagging schema, do nothing
                 pass
-            print("tags = ", tags)
             guid = "%s-%s" % (set_type, sample_id)
             text_a = ' '.join(words)
             # label = [absa_label_vocab[tag] for tag in tags]
