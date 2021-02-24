@@ -32,7 +32,7 @@ def _get_all_tags(data_dir, set_type, tagging_schema):
                 else:
                     word = ''.join((len(eles) - 2) * ['='])
                     tag = eles[-1]
-                print('%s-%s', word, tag)
+                print('%s-%s' %(word, tag))
                 words.append(word)
                 tags.append(tag)
             # convert from ot to bieos
