@@ -155,6 +155,7 @@ class ABSAProcessor(DataProcessor):
                 else:
                     # original tags follow the OT tagging schema, do nothing
                     pass
+                print("tags = ", tags)
                 guid = "%s-%s" % (set_type, sample_id)
                 text_a = ' '.join(words)
                 #label = [absa_label_vocab[tag] for tag in tags]
