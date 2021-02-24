@@ -128,6 +128,8 @@ class ABSAProcessor(DataProcessor):
 
     def _create_examples(self, data_dir, set_type, tagging_schema):
         examples = []
+        print("data_dir = ", data_dir)
+        print("set_type = ", set_type)
         file = os.path.join(data_dir, "%s.txt" % set_type)
         class_count = np.zeros(3)
         with open(file, 'r', encoding='UTF-8') as fp:
