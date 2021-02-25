@@ -45,6 +45,7 @@ def _get_all_tags(data_dir, set_type, tagging_schema):
 def _getAllCrossWords():
     laptop_test_words = _get_all_tags(data_dir='./data/laptop14', set_type='test', tagging_schema='BIEOS')
     laptop_train_words = _get_all_tags(data_dir='./data/laptop14', set_type='train', tagging_schema='BIEOS')
-    print("_getAllCrossWords = ", np.cross(laptop_test_words, laptop_train_words))
+    crosses = set(laptop_test_words).intersection(laptop_train_words)
+    print("_getAllCrossWords = ", crosses)
 
 _getAllCrossWords()
