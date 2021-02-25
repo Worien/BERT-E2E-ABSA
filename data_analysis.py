@@ -5,6 +5,7 @@ import csv
 import logging
 import os
 import sys
+import numpy as np
 from io import open
 
 from seq_utils import *
