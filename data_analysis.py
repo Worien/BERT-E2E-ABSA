@@ -46,5 +46,4 @@ def _getAllCrossWords():
     laptop_train_words = _get_all_tags(data_dir='./data/laptop14', set_type='train', tagging_schema='BIEOS')
     print("_getAllCrossWords = ", np.cross(laptop_test_words, laptop_train_words))
 
-_get_all_tags(data_dir='./data/laptop14', set_type='test', tagging_schema='BIEOS')
-
+_getAllCrossWords()
